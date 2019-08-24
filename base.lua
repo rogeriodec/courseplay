@@ -1506,6 +1506,8 @@ function courseplay:loadVehicleCPSettings(xmlFile, key, resetVehicles)
  		self.cp.maxRunNumber		 = Utils.getNoNil(  getXMLInt(xmlFile, curKey .. '#maxRunNumber'),			 11);
  		self.cp.runCounterActive	= Utils.getNoNil(  getXMLBool(xmlFile, curKey .. '#runCounterActive'),		 false);
 		self.cp.saveFuelOptionActive = Utils.getNoNil(  getXMLBool(xmlFile, curKey .. '#saveFuelOption'),			 true);
+		self.cp.startAtPoint = Utils.getNoNil(  getXMLInt(xmlFile, curKey .. '#startAtPoint'),			 1);
+
 		-- TODO: move this into DrivingModeSetting
 		self.cp.drivingMode:set(Utils.getNoNil(  getXMLInt(xmlFile, curKey .. '#drivingMode'),			 0));
 	
@@ -1704,7 +1706,8 @@ function courseplay:saveToXMLFile(xmlFile, key, usedModNames)
 	setXMLBool(xmlFile, newKey..".basics #runCounterActive", self.cp.runCounterActive)
 	setXMLBool(xmlFile, newKey..".basics #saveFuelOption", self.cp.saveFuelOptionActive)
 	setXMLInt(xmlFile, newKey..".basics #drivingMode", self.cp.drivingMode:get())
-	
+	setXMLInt(xmlFile, newKey..".basics #startAtPoint",self.cp.startAtPoint)
+
 	--HUD
 	setXMLBool(xmlFile, newKey..".HUD #openHudWithMouse", self.cp.hud.openWithMouse)
 	setXMLBool(xmlFile, newKey..".HUD #showMiniHud", self.cp.hud.showMiniHud)
