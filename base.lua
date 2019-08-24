@@ -1713,14 +1713,10 @@ function courseplay:saveToXMLFile(xmlFile, key, usedModNames)
 	setXMLBool(xmlFile, newKey..".basics #runCounterActive", self.cp.runCounterActive)
 	setXMLBool(xmlFile, newKey..".basics #saveFuelOption", self.cp.saveFuelOptionActive)
 	setXMLInt(xmlFile, newKey..".basics #drivingMode", self.cp.drivingMode:get())
-<<<<<<< HEAD
+	setXMLInt(xmlFile, newKey..".basics #startAtPoint",self.cp.startAtPoint)
 	setXMLInt(xmlFile, newKey..".basics #schwarmId", self.cp.schwarmId)
 	setXMLInt(xmlFile, newKey..".basics #schwarmGroupId", self.cp.schwarmGroupId)
-	
-=======
-	setXMLInt(xmlFile, newKey..".basics #startAtPoint",self.cp.startAtPoint)
 
->>>>>>> master
 	--HUD
 	setXMLBool(xmlFile, newKey..".HUD #openHudWithMouse", self.cp.hud.openWithMouse)
 	setXMLBool(xmlFile, newKey..".HUD #showMiniHud", self.cp.hud.showMiniHud)
